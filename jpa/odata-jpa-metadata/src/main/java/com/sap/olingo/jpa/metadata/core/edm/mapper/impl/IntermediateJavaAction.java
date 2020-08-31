@@ -92,7 +92,7 @@ class IntermediateJavaAction extends IntermediateOperation implements JPAAction 
 
   @Override
   public JPAOperationResultParameter getResultParameter() {
-    return new IntermediatOperationResultParameter(this, jpaAction.returnType(), javaAction.getReturnType(),
+    return new IntermediateOperationResultParameter(this, jpaAction.returnType(), javaAction.getReturnType(),
         IntermediateOperationHelper.isCollection(javaAction.getReturnType()));
   }
 
@@ -128,7 +128,7 @@ class IntermediateJavaAction extends IntermediateOperation implements JPAAction 
   private FullQualifiedName determineParameterType(final BindingPosition bindingPosition, final int i,
       final JPAParameter jpaParameter) throws ODataJPAModelException {
 
-    final EdmPrimitiveTypeKind edmType = JPATypeConvertor.convertToEdmSimpleType(jpaParameter.getType());
+    final EdmPrimitiveTypeKind edmType = JPATypeConverter.convertToEdmSimpleType(jpaParameter.getType());
     if (edmType != null)
       return edmType.getFullQualifiedName();
     final IntermediateEnumerationType enumType = schema.getEnumerationType(jpaParameter.getType());

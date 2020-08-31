@@ -29,8 +29,7 @@ import com.sap.olingo.jpa.processor.core.api.JPAServiceDebugger;
 import com.sap.olingo.jpa.processor.core.exception.JPAIllicalAccessException;
 import com.sap.olingo.jpa.processor.core.serializer.JPASerializer;
 
-public final class JPAODataRequestContextImpl implements JPAODataCRUDRequestContext, JPAODataRequestContextAccess,
-    JPARequestContext {
+public final class JPAODataRequestContextImpl implements JPAODataCRUDRequestContext, JPAODataRequestContextAccess, JPARequestContext {
 
   private Optional<JPAODataClaimProvider> claims = Optional.empty();
   private Optional<JPAODataGroupProvider> groups = Optional.empty();
@@ -52,8 +51,9 @@ public final class JPAODataRequestContextImpl implements JPAODataCRUDRequestCont
     this(uriInfo, null, context);
   }
 
-  JPAODataRequestContextImpl(final JPAODataPage page, final JPASerializer serializer,
-      final JPAODataRequestContextAccess context) throws JPAIllicalAccessException {
+  JPAODataRequestContextImpl(final JPAODataPage page,
+                             final JPASerializer serializer,
+                             final JPAODataRequestContextAccess context) throws JPAIllicalAccessException {
     copyContextValues(context);
     this.serializer = serializer;
     this.jpaCUDRequestHandler = new JPADefaultCUDRequestHandler();

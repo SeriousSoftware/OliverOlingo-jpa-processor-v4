@@ -35,15 +35,15 @@
 		<class>com.sap.olingo.jpa.processor.core.testmodel.Country</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.CountryKey</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.DateConverter</class>
-        <class>com.sap.olingo.jpa.processor.core.testmodel.DateTimeConverter</class>		
+		<class>com.sap.olingo.jpa.processor.core.testmodel.DateTimeConverter</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.DeepProtectedExample</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.DummyEmbeddedToIgnore</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.DummyToBeIgnored</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddress</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddressTable</class>
+		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddressWithGroup</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddressWithProtection</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddressWithThreeProtections</class>
-		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddressWithGroup</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.InstanceRestrictionKey</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.JoinComplex</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.JoinRelation</class>
@@ -53,9 +53,9 @@
 		<class>com.sap.olingo.jpa.processor.core.testmodel.Organization</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.OrganizationImage</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.Person</class>
-		<class>com.sap.olingo.jpa.processor.core.testmodel.PersonImage</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.PersonDeepProtected</class> 
 		<class>com.sap.olingo.jpa.processor.core.testmodel.PersonDeepProtectedHidden</class> 
+		<class>com.sap.olingo.jpa.processor.core.testmodel.PersonImage</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.PostalAddressData</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.PostalAddressDataWithGroup</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.StringConverter</class>
@@ -63,15 +63,14 @@
 		<class>com.sap.olingo.jpa.processor.core.testmodel.Team</class>
 	    <exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
-			<property name="javax.persistence.validation.mode" value="NONE" />
-			<property name="eclipselink.logging.level.sql" value="WARNING"  />
+			<property name="eclipse.weaving" value="true"/>
 			<property name="eclipselink.logging.level" value="WARNING" />
+			<property name="eclipselink.logging.level.sql" value="WARNING"  />
 			<property name="eclipselink.logging.parameters" value="true" />
 			<property name="eclipselink.logging.timestamp" value="true" />
-			<property name="eclipselink.weaving" value="static" />
-			<property name="eclipse.weaving" value="true"/>
 			<property name="eclipselink.persistence-context.flush-mode" value="commit" />
-			<property name="eclipselink.logging.level" value="WARNING" />
+			<property name="eclipselink.weaving" value="static" />
+			<property name="javax.persistence.validation.mode" value="NONE" />
 
 			<!--  -->
 			<property name="openjpa.DynamicEnhancementAgent" value="true"/>
@@ -85,30 +84,30 @@
 	</persistence-unit>
 	<persistence-unit name="error">
 		<class>com.sap.olingo.jpa.processor.core.errormodel.CollectionAttributeProtected</class>
-		<class>com.sap.olingo.jpa.processor.core.testmodel.CountryKey</class>
-		<class>com.sap.olingo.jpa.processor.core.errormodel.NavigationAttributeProtected</class>
-		<class>com.sap.olingo.jpa.processor.core.errormodel.NavigationPropertyPartOfGroup</class>
-		<class>com.sap.olingo.jpa.processor.core.errormodel.EmbeddedKeyPartOfGroup</class>
-		<class>com.sap.olingo.jpa.processor.core.errormodel.MandatoryPartOfGroup</class>
-		<class>com.sap.olingo.jpa.processor.core.errormodel.KeyPartOfGroup</class>
 		<class>com.sap.olingo.jpa.processor.core.errormodel.ComplextProtectedNoPath</class>
 		<class>com.sap.olingo.jpa.processor.core.errormodel.ComplextProtectedWrongPath</class>
+		<class>com.sap.olingo.jpa.processor.core.errormodel.EmbeddedKeyPartOfGroup</class>
+		<class>com.sap.olingo.jpa.processor.core.errormodel.KeyPartOfGroup</class>
+		<class>com.sap.olingo.jpa.processor.core.errormodel.MandatoryPartOfGroup</class>
+		<class>com.sap.olingo.jpa.processor.core.errormodel.NavigationAttributeProtected</class>
+		<class>com.sap.olingo.jpa.processor.core.errormodel.NavigationPropertyPartOfGroup</class>
 		<class>com.sap.olingo.jpa.processor.core.errormodel.PersonDeepCollectionProtected</class> 
-		<class>com.sap.olingo.jpa.processor.core.testmodel.AddressDeepProtected</class>
-		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddressWithProtection</class>
 		<class>com.sap.olingo.jpa.processor.core.errormodel.Team</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.AccessRightsConverter</class>
+		<class>com.sap.olingo.jpa.processor.core.testmodel.AddressDeepProtected</class>
+		<class>com.sap.olingo.jpa.processor.core.testmodel.CountryKey</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.DateConverter</class>
+		<class>com.sap.olingo.jpa.processor.core.testmodel.InhouseAddressWithProtection</class>
 		<class>com.sap.olingo.jpa.processor.core.testmodel.StringConverter</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
+			<property name="eclipselink.logging.level" value="WARNING" />
+			<property name="eclipselink.logging.level.metadata" value="ALL"/>
+			<property name="eclipselink.logging.level.sql" value="WARNING" />
 			<property name="eclipselink.logging.parameters" value="true" />
 			<property name="eclipselink.logging.timestamp" value="true" />
-			<property name="eclipselink.weaving" value="static" />
 			<property name="eclipselink.persistence-context.flush-mode" value="commit" />
-			<property name="eclipselink.logging.level" value="WARNING" />
-			<property name="eclipselink.logging.level.sql" value="WARNING" />
-			<property name="eclipselink.logging.level.metadata" value="ALL"/>
+			<property name="eclipselink.weaving" value="static" />
 			<!--  -->
 			<property name="openjpa.DynamicEnhancementAgent" value="true"/>
 			<property name="openjpa.RuntimeUnenhancedClasses" value="unsupported"/>

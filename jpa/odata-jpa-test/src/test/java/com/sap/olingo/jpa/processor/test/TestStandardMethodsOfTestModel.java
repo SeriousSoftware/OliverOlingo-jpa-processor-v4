@@ -92,27 +92,27 @@ public class TestStandardMethodsOfTestModel {
 
   static Stream<Arguments> testModelEntities() {
     return Stream.of(
+        arguments(AdministrativeDivision.class),
         arguments(AdministrativeDivisionDescription.class),
         arguments(AdministrativeDivisionDescriptionKey.class),
         arguments(AdministrativeDivisionKey.class),
-        arguments(AdministrativeDivision.class),
         arguments(AdministrativeInformation.class),
         arguments(BusinessPartnerProtected.class),
-        arguments(BusinessPartnerWithGroups.class),
         arguments(BusinessPartnerRole.class),
-        arguments(BusinessPartnerRoleWithGroup.class),
-        arguments(BusinessPartnerRoleProtected.class),
         arguments(BusinessPartnerRoleKey.class),
+        arguments(BusinessPartnerRoleProtected.class),
+        arguments(BusinessPartnerRoleWithGroup.class),
+        arguments(BusinessPartnerWithGroups.class),
         arguments(ChangeInformation.class),
-        arguments(CommunicationData.class),
-        arguments(Collection.class),
         arguments(CollcetionInnerComplex.class),
-        arguments(CollectionPartOfComplex.class),
         arguments(CollcetionNestedComplex.class),
+        arguments(Collection.class),
         arguments(CollectionDeep.class),
         arguments(CollectionFirstLevelComplex.class),
+        arguments(CollectionPartOfComplex.class),
         arguments(CollectionSecondLevelComplex.class),
         arguments(Comment.class),
+        arguments(CommunicationData.class),
         arguments(CountryKey.class),
         arguments(CountryRestriction.class),
         arguments(InhouseAddress.class),
@@ -126,9 +126,9 @@ public class TestStandardMethodsOfTestModel {
         arguments(Organization.class),
         arguments(OrganizationImage.class),
         arguments(Person.class),
-        arguments(PersonImage.class),
         arguments(PersonDeepProtected.class),
         arguments(PersonDeepProtectedHidden.class),
+        arguments(PersonImage.class),
         arguments(PostalAddressData.class),
         arguments(PostalAddressDataWithGroup.class),
         arguments(User.class));
@@ -136,18 +136,18 @@ public class TestStandardMethodsOfTestModel {
 
   static Stream<Arguments> testErrorEntities() {
     return Stream.of(
-        arguments(com.sap.olingo.jpa.processor.core.errormodel.Team.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.AdministrativeInformation.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.ChangeInformation.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.CollectionAttributeProtected.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.ComplextProtectedNoPath.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.ComplextProtectedWrongPath.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.EmbeddedKeyPartOfGroup.class),
-        arguments(com.sap.olingo.jpa.processor.core.errormodel.NavigationAttributeProtected.class),
-        arguments(com.sap.olingo.jpa.processor.core.errormodel.NavigationPropertyPartOfGroup.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.KeyPartOfGroup.class),
         arguments(com.sap.olingo.jpa.processor.core.errormodel.MandatoryPartOfGroup.class),
-        arguments(com.sap.olingo.jpa.processor.core.errormodel.PersonDeepCollectionProtected.class));
+        arguments(com.sap.olingo.jpa.processor.core.errormodel.NavigationAttributeProtected.class),
+        arguments(com.sap.olingo.jpa.processor.core.errormodel.NavigationPropertyPartOfGroup.class),
+        arguments(com.sap.olingo.jpa.processor.core.errormodel.PersonDeepCollectionProtected.class),
+        arguments(com.sap.olingo.jpa.processor.core.errormodel.Team.class));
   }
 
   @BeforeEach

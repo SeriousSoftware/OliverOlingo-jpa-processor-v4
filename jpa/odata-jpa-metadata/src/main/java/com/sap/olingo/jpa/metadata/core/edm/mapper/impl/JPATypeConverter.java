@@ -27,9 +27,9 @@ import com.sap.olingo.jpa.metadata.core.edm.mapper.exception.ODataJPAModelExcept
  * This class holds utility methods for type conversions between JPA Java types and OData Types.
  * 
  */
-public final class JPATypeConvertor {
+public final class JPATypeConverter {
 
-  private JPATypeConvertor() {}
+  private JPATypeConverter() {}
 
   public static EdmPrimitiveTypeKind convertToEdmSimpleType(final Class<?> type) throws ODataJPAModelException {
     return convertToEdmSimpleType(type, null);

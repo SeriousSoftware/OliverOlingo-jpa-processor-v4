@@ -88,13 +88,13 @@ abstract class IntermediateProperty extends IntermediateModelElement implements 
 
   @SuppressWarnings("unchecked")
   @Override
-  public <X, Y extends Object> AttributeConverter<X, Y> getConverter() {
+  public <X, Y> AttributeConverter<X, Y> getConverter() {
     return (AttributeConverter<X, Y>) valueConverter;
   }
 
   @Override
   public EdmPrimitiveTypeKind getEdmType() throws ODataJPAModelException {
-    return JPATypeConvertor.convertToEdmSimpleType(entityType);
+    return JPATypeConverter.convertToEdmSimpleType(entityType);
   }
 
   @Override
@@ -276,7 +276,7 @@ abstract class IntermediateProperty extends IntermediateModelElement implements 
     } else {
       javaType = entityType;
     }
-    return JPATypeConvertor.convertToEdmSimpleType(javaType, jpaAttribute)
+    return JPATypeConverter.convertToEdmSimpleType(javaType, jpaAttribute)
         .getFullQualifiedName();
   }
 
@@ -419,7 +419,7 @@ abstract class IntermediateProperty extends IntermediateModelElement implements 
         Type[] types = ((ParameterizedType) convType[0]).getActualTypeArguments();
         entityType = (Class<?>) types[0];
         dbType = (Class<?>) types[1];
-        if (!JPATypeConvertor.isSupportedByOlingo(entityType))
+        if (!JPATypeConverter.isSupportedByOlingo(entityType))
           valueConverter = (AttributeConverter<?, ?>) jpaConverter.converter().newInstance();
       } catch (InstantiationException | IllegalAccessException e) {
         throw new ODataJPAModelException(

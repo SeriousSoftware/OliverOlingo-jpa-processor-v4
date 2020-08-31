@@ -14,10 +14,10 @@ import com.sap.olingo.jpa.processor.core.exception.ODataJPASerializerException;
 
 public interface JPASerializer {
 
-  public SerializerResult serialize(final ODataRequest request, final EntityCollection result)
+  SerializerResult serialize(final ODataRequest request, final EntityCollection result)
       throws SerializerException, ODataJPASerializerException;
 
-  public ContentType getContentType();
+  ContentType getContentType();
 
   default URI buildServiceRoot(final ODataRequest request, final JPAODataCRUDContextAccess serviceContext)
       throws URISyntaxException {
